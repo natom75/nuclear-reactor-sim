@@ -28,15 +28,13 @@ And finally, in the *output page* You can see:
 - The final **heat** output
 - The **power** output
 
-
 In the *control page*, You can change the following parameters:
 - **The control rods' status per rod**
 - **The circulating waters' speed**
 
-But before You start the simulation, You can set the following parameters too:
+But before You start the simulation, You can set the following parameters too. These parameters cannot be changed by You after the simulation has started, but the system can change them.
 - **Type of fuel rods**
 - **Enrichment of fuel rods**
-The parameters cannot be changed by You after the simulation has started, but the system can change them.
 
 ## Consequences:
 It can work or it can blow up.
