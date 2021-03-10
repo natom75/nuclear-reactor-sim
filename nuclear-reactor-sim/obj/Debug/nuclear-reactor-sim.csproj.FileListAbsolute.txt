@@ -1,0 +1,10 @@
+C:\Users\Andris\Documents\GitHub\nuclear-reactor-sim\nuclear-reactor-sim\bin\Debug\nuclear-reactor-sim.exe.config
+C:\Users\Andris\Documents\GitHub\nuclear-reactor-sim\nuclear-reactor-sim\bin\Debug\nuclear-reactor-sim.exe
+C:\Users\Andris\Documents\GitHub\nuclear-reactor-sim\nuclear-reactor-sim\bin\Debug\nuclear-reactor-sim.pdb
+C:\Users\Andris\Documents\GitHub\nuclear-reactor-sim\nuclear-reactor-sim\obj\Debug\nuclear-reactor-sim.csprojAssemblyReference.cache
+C:\Users\Andris\Documents\GitHub\nuclear-reactor-sim\nuclear-reactor-sim\obj\Debug\nuclear_reactor_sim.Form1.resources
+C:\Users\Andris\Documents\GitHub\nuclear-reactor-sim\nuclear-reactor-sim\obj\Debug\nuclear_reactor_sim.Properties.Resources.resources
+C:\Users\Andris\Documents\GitHub\nuclear-reactor-sim\nuclear-reactor-sim\obj\Debug\nuclear-reactor-sim.csproj.GenerateResource.cache
+C:\Users\Andris\Documents\GitHub\nuclear-reactor-sim\nuclear-reactor-sim\obj\Debug\nuclear-reactor-sim.csproj.CoreCompileInputs.cache
+C:\Users\Andris\Documents\GitHub\nuclear-reactor-sim\nuclear-reactor-sim\obj\Debug\nuclear-reactor-sim.exe
+C:\Users\Andris\Documents\GitHub\nuclear-reactor-sim\nuclear-reactor-sim\obj\Debug\nuclear-reactor-sim.pdb
