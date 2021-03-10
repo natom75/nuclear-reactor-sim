@@ -32,7 +32,7 @@ In the *control page*, You can change the following parameters:
 - **The control rods' status per rod**
 - **The circulating waters' speed**
 
-But before You start the simulation, You can set the following parameters too. These parameters cannot be changed by You after the simulation has started, but the system can change them.
+But before You start the simulation, You can set the following parameters too. These parameters cannot be changed by You after the simulation has started, but the simulation can affect them, and they affect the simulation too.
 - **Type of fuel rods**
 - **Enrichment of fuel rods**
 
