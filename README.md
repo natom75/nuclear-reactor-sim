@@ -15,18 +15,28 @@ This is a simulaton of a standard RBMK (which is graphite-moderated, water coole
 - Power output: (correlates with the final heat output)
 
 ## Interface
-The screen consists of a data page and a control page. The data page consists of 3 sub-pages. In the reactors' data page You can see:
+The screen consists of a *data page* and a *control page*. The data page consists of 3 sub-pages. In the *reactors' data page* You can see:
 - The reactors' **temperature**
 - The control rods' status (**percent of the rod in the reactor, per rod**)
 - The **spentness** of the fuel rods
 
-After that, in the cooling systems' data page You can see:
+After that, in the *cooling systems' data page* You can see:
 - The circulating waters' **temperature**
 - The circulating waters' **speed**
 
-And finally, in the output page You can see:
+And finally, in the *output page* You can see:
 - The final **heat** output
 - The **power** output
+
+
+In the *control page*, You can change the following parameters:
+- **The control rods' status per rod**
+- **The circulating waters' speed**
+
+But before You start the simulation, You can set the following parameters too:
+- **Type of fuel rods**
+- **Enrichment of fuel rods**
+The parameters cannot be changed by You after the simulation has started, but the system can change them.
 
 ## Consequences:
 It can work or it can blow up.
