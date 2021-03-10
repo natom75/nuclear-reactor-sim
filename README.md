@@ -36,7 +36,7 @@ In the *control page*, You can change the following parameters:
 
 But before You start the simulation, You can set the following parameters too. These parameters cannot be changed by You after the simulation has started, but the simulation can affect them, and they affect the simulation too.
 - **Type of fuel rods**
-- **Enrichment of fuel rods**
+- **Automatic power load regulation**
 
 ## Consequences
 It can work or it can blow up.
