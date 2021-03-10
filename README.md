@@ -36,7 +36,7 @@ But before You start the simulation, You can set the following parameters too. T
 - **Type of fuel rods**
 - **Enrichment of fuel rods**
 
-## Consequences:
+## Consequences
 It can work or it can blow up.
 
 ## How does it work
