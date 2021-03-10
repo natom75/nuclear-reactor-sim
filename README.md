@@ -12,7 +12,8 @@ This is a simulaton of a standard RBMK (which is graphite-moderated, water coole
 - Circulating waters' speed: (correlates with the reactors' temperature, the circulating waters' temperature and the final heat output)
 - Circulating waters' temperature: (correlates with the reactors' temperature and the final heat output)
 - Final heat output: (correlates with the circulating waters' temperature)
-- Power output: (correlates with the final heat output)
+- Power output: (correlates with the final heat output and the power load)
+- Power load: (it only affects)
 
 ## Interface
 The screen consists of a *data page* and a *control page*. The data page consists of 3 sub-pages. In the *reactors' data page* You can see:
@@ -31,6 +32,7 @@ And finally, in the *output page* You can see:
 In the *control page*, You can change the following parameters:
 - **The control rods' status per rod**
 - **The circulating waters' speed**
+- **The power networks' load**
 
 But before You start the simulation, You can set the following parameters too. These parameters cannot be changed by You after the simulation has started, but the simulation can affect them, and they affect the simulation too.
 - **Type of fuel rods**
