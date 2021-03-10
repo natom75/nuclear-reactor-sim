@@ -6,7 +6,7 @@ This is a simulaton of a standard RBMK (which is graphite-moderated, water coole
 - Type of fuel rods: Pure uranium dioxide or uranium oxide with europium oxide (correlates with the number of fissions each second)
 - Spentness of the fuel rods: 0-100% (correlates with the number of fissions each second)
 - Enrichment of the fuel rods: 1-20%, ideal is 2% (correlates with the number of fissions each second)
-- Percent of graphite rod in the reactors' core per rods: (correlates with the number of fissions each second)
+- Percent of graphite rods in the reactors' core: (correlates with the number of fissions each second)
 - Number of fissions each second: (correlates with the reactors' temperature)
 - Reactors' temperature: (correlates with the circulating waters' temperature)
 - Circulating waters' speed: (correlates with the reactors' temperature, the circulating waters' temperature and the final heat output)
@@ -17,7 +17,7 @@ This is a simulaton of a standard RBMK (which is graphite-moderated, water coole
 ## Interface
 The screen consists of a *data page* and a *control page*. The data page consists of 3 sub-pages. In the *reactors' data page* You can see:
 - The reactors' **temperature**
-- The control rods' status (**percent of the rod in the reactor, per rod**)
+- The control rods' status (**percent of the rods in the reactor**)
 - The **spentness** of the fuel rods
 
 After that, in the *cooling systems' data page* You can see:
