@@ -19,11 +19,11 @@ The screen consists of a data page and a control page. The data page consists of
 - The reactors' **temperature**
 - The control rods' status (**percent of the rod in the reactor, per rod**)
 - The **spentness** of the fuel rods
-- 
+
 After that, in the cooling systems' data page You can see:
 - The circulating waters' **temperature**
 - The circulating waters' **speed**
-- 
+
 And finally, in the output page You can see:
 - The final **heat** output
 - The **power** output
