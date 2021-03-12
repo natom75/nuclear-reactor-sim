@@ -23,24 +23,19 @@ namespace nuclear_reactor_sim
             public double CWT = 0; //circulating waters' temperature
             public double TO = 0;  //temperature output
             public double PO = 0;  //power output
+            public double CWV = 0;  //coolant volume
         }
         class fuel
         {
-            public double startingFPS = 0;  //the FPS at 99% CRS
             public double FPSincrease = 0;  //the FPS increase per 1 CRS decrease
             public double meltdownTemp = 0; //the temperature meltdown value (after this the fuel rods melt, hence the reactor stops)
-            public double maxFPS = 0;       //max FPS that the fuel can emit
             public double depletion = 0;    //depletion factor
         }
         class coolant
         {
-            public double startingFPS = 0;  //the FPS at 99% CRS
-            public double FPSincrease = 0;  //the FPS increase per 1 CRS decrease so 2 means 1 CRS decrease increases the FPS by a factor of 2
-            public double Tempincrease = 0; //the temperature increase per FPS increase so 2 means 1 FPS increase increases the temperature by a factor of 2
-            public double meltdownFPS = 0;  //the FPS meltdown value (after this the reactor cannot be cooled enough to stop, hence the game over)
-            public double meltdownTemp = 0; //the temperature meltdown value (after this the fuel rods melt, hence the reactor stops)
-            public double volume = 0;       //how much coolant do You have
-            public double boilingTemp = 0;  //boiling point
+            public double thermalConductivity = 0;  //no need to explain
+            public double volumeDecrease = 0;       //how much coolant do You lose
+            public double boilingTemp = 0;          //boiling point
         }
         public Form1()
         {
@@ -69,9 +64,10 @@ namespace nuclear_reactor_sim
         private async void button1_Click(object sender, EventArgs e)
         {
             //preparation
+            radioButton3.Enabled = false;
+            radioButton6.Enabled = false;
             radioButton1.Enabled = false;
             radioButton2.Enabled = false;
-            radioButton3.Enabled = false;
             checkBox1.Enabled = false;
             checkBox2.Enabled = false;
             button1.Enabled = false;
@@ -84,11 +80,11 @@ namespace nuclear_reactor_sim
             numericUpDown2.Enabled = true;
             button2.Enabled = true;
 
+            //checkboxes
             if (checkBox1.Checked)
             {
                 label49.Visible = true;
-                numericUpDown3.Value = 100;
-            }
+            } //auto power load
             else
             {
                 numericUpDown3.Enabled = true;
@@ -98,71 +94,82 @@ namespace nuclear_reactor_sim
             {
                 label51.Visible = true;
                 label52.Visible = true;
-            }
+            } //FPS
 
             if (checkBox3.Checked)
             {
                 label54.Visible = true;
                 label55.Visible = true;
                 label60.Visible = true;
-            }
+            } //timer
 
             if (checkBox4.Checked)
             {
                 label56.Visible = true;
                 label57.Visible = true;
                 label59.Visible = true;
-            }
+            } //power generated
 
-            coolant f1 = new coolant();
+            //radiobuttons
+            //fuel
+            fuel f1 = new fuel();
+            if (radioButton3.Checked)
+            {
+                f1.FPSincrease = 1.5;
+                f1.meltdownTemp = 2178;
+                f1.depletion = 2;
+            } //rbmk
+            else if (radioButton6.Checked)
+            {
+                f1.FPSincrease = 2.1;
+                f1.meltdownTemp = 4133;
+                f1.depletion = 3;
+            } //quadriso
+
+            //coolant
+            coolant c1 = new coolant();
             if (radioButton1.Checked)
             {
-                f1.startingFPS = 3;
-                f1.FPSincrease = 1.5;
-                f1.Tempincrease = 2;
-                f1.meltdownFPS = 1085;
-                f1.meltdownTemp = 2178;
-                f1.maxFPS = 100000;
-                f1.depletion = 2;
-            }
+                c1.thermalConductivity = 0.62;
+                c1.volumeDecrease = 0.002;
+                c1.boilingTemp = 101.4;
+            } //heavy water
             else if (radioButton2.Checked)
             {
-                f1.startingFPS = 3;
-                f1.FPSincrease = 1.5;
-                f1.Tempincrease = 2;
-                f1.meltdownFPS = 1085;
-                f1.meltdownTemp = 2178;
-                f1.maxFPS = 100000;
-                f1.depletion = 2;
-            }
-            else if (radioButton3.Checked)
-            {
-                f1.startingFPS = 3;
-                f1.FPSincrease = 1.5;
-                f1.Tempincrease = 2;
-                f1.meltdownFPS = 1085;
-                f1.meltdownTemp = 2178;
-                f1.maxFPS = 100000;
-                f1.depletion = 2;
-            }
+                c1.thermalConductivity = 0.94;
+                c1.volumeDecrease = 0.014;
+                c1.boilingTemp = 882.8;
+            } //liquid sodium
             //ACTION
             reactor r1 = new reactor();
-            while (!gameover(r1,f1))
+            //fill up reactor with fuel
+            r1.FRD = 0;
+            //fill up reactor with control rods
+            r1.CRS = 211;
+            //fill up reactor with coolant
+            r1.CWV = 100;
+            while (!gameover(r1,f1,c1))
             {
                 //set data
                 label39.Text = Convert.ToString(r1.CRS);
                 progressBar2.Value = Convert.ToInt32(label39.Text);
                 label42.Text = Convert.ToString(r1.CWS);
                 progressBar4.Value = Convert.ToInt32(Math.Round(r1.CWS, 0));
-                label45.Text = Convert.ToString(r1.PL);
+                label45.Text = Convert.ToString(Math.Round(r1.PL,3));
+                if (r1.PL > progressBar8.Maximum) { progressBar8.Value = progressBar8.Maximum; } else if (r1.PL < progressBar8.Minimum) { progressBar8.Value = progressBar8.Minimum; } else { progressBar8.Value = Convert.ToInt32(Math.Round(r1.PL, 0)); }
                 label52.Text = Convert.ToString(Math.Round(r1.FPS, 0));
                 label40.Text = Convert.ToString(Math.Round(r1.FRD, 3));
                 progressBar3.Value = Convert.ToInt32(Math.Round(r1.FRD, 0));
                 label38.Text = Convert.ToString(Math.Round(r1.RT, 3));
-                progressBar1.Value = Convert.ToInt32(Math.Round(r1.RT, 0));
+                if (r1.RT > progressBar1.Maximum) { progressBar1.Value = progressBar1.Maximum; } else if (r1.RT < progressBar1.Minimum) { progressBar1.Value = progressBar1.Minimum; } else { progressBar1.Value = Convert.ToInt32(Math.Round(r1.RT, 0)); }
                 label41.Text = Convert.ToString(Math.Round(r1.CWT, 3));
+                if (r1.CWT > c1.boilingTemp) { progressBar5.Value = Convert.ToInt32(c1.boilingTemp); } else { progressBar5.Value = Convert.ToInt32(Math.Round(r1.CWT, 0)); }
                 label43.Text = Convert.ToString(Math.Round(r1.TO, 3));
-                label44.Text = Convert.ToString(r1.PO);
+                if (r1.TO > progressBar7.Maximum) { progressBar7.Value = progressBar7.Maximum; } else { progressBar7.Value = Convert.ToInt32(Math.Round(r1.TO, 0)); }
+                label44.Text = Convert.ToString(Math.Round(r1.PO,3));
+                if (r1.PO > progressBar6.Maximum) { progressBar6.Value = progressBar6.Maximum; } else if (r1.PO < progressBar6.Minimum) { progressBar6.Value = progressBar6.Minimum; } else { progressBar6.Value = Convert.ToInt32(r1.PO); }
+                label62.Text = Convert.ToString(Math.Round(r1.CWV, 3));
+                progressBar12.Value = Convert.ToInt32(Math.Round(r1.CWV, 0));
 
                 //get data from prev cycle
                 r1.CRS = Convert.ToDouble(label39.Text);
@@ -174,9 +181,10 @@ namespace nuclear_reactor_sim
                 r1.CWT = Convert.ToDouble(label41.Text);
                 r1.TO = Convert.ToDouble(label43.Text);
                 r1.PO = Convert.ToDouble(label44.Text);
+                r1.CWV = Convert.ToDouble(label62.Text);
 
                 //action happens here
-                r1 = cycle(r1, f1);
+                r1 = cycle(r1, f1, c1);
 
                 //timer
                 double time = Convert.ToDouble(label55.Text);
@@ -184,8 +192,7 @@ namespace nuclear_reactor_sim
                 label55.Text = Convert.ToString(time);
 
                 //other cool features
-                progressBar1.Maximum = Convert.ToInt32(f1.meltdownTemp);
-
+                progressBar1.Maximum = Convert.ToInt32(f1.meltdownTemp); //reactor temp
                 if (r1.RT > (f1.meltdownTemp / 10)*9)
                 {
                     label38.ForeColor = System.Drawing.Color.Red;
@@ -195,9 +202,44 @@ namespace nuclear_reactor_sim
                     label38.ForeColor = System.Drawing.Color.Black;
                 }
 
-                if (true)
+                progressBar5.Maximum = Convert.ToInt32(c1.boilingTemp); //water temp
+                if (r1.CWT > (c1.boilingTemp / 10) * 9)
                 {
+                    label41.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    label41.ForeColor = System.Drawing.Color.Black;
+                }
 
+                if (r1.CWV > (2570 / 10) * 9) //water volume
+                {
+                    label62.ForeColor = System.Drawing.Color.Green;
+                }
+                else if (r1.CWV > (2570 / 10))
+                {
+                    label62.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    label62.ForeColor = System.Drawing.Color.Black;
+                }
+
+                if (r1.TO > 374)
+                {
+                    label43.ForeColor = System.Drawing.Color.Red;
+                }
+                else if (r1.TO > 100)
+                {
+                    label43.ForeColor = System.Drawing.Color.Green;
+                }
+                else if (r1.TO > 80)
+                {
+                    label43.ForeColor = System.Drawing.Color.Black;
+                }
+                else
+                {
+                    label43.ForeColor = System.Drawing.Color.Red;
                 }
 
                 if (r1.CWS > 0)
@@ -214,29 +256,22 @@ namespace nuclear_reactor_sim
             MessageBox.Show("Game over");
         }
 
-        private reactor cycle(reactor r1, fuel f1)
+        private reactor cycle(reactor r1, fuel f1, coolant c1)
         {
             r1.CRS = Convert.ToDouble(numericUpDown1.Value); //control rods' status
 
             r1.CWS = Convert.ToDouble(numericUpDown2.Value); //water speed
 
-            r1.FPS = ((211-r1.CRS)*4*1.5)/((r1.FRD + 0.1)/10); //fission per sec
+            r1.FPS = ((211-r1.CRS)*4*f1.FPSincrease)/((r1.FRD + 0.1)/10); //fission per sec
             
-            r1.RT = r1.RT + (r1.FPS / 3.2);
+            r1.RT = r1.RT + (r1.FPS / 3.2); //reator temp increase by fuel
 
-            if (r1.FPS == 0 && 2 == 0)
-            {
-                r1.FRD = 0; //fuel depletion but only if 0/0
-            }
-            else
-            {
-                r1.FRD = r1.FRD + (r1.FPS / 2)/1000; //fuel depletion
-            }
+            r1.FRD = r1.FRD + (r1.FPS / f1.depletion)/1000; //fuel depletion
 
             double exchangedTemp = 0;
             if (!(r1.RT <= 0 && r1.CWT <= 0))
             {
-                exchangedTemp = r1.RT * (0.9 * ((r1.CWS + 1) / 1868)); //exchanged temperature between reactor and coolant
+                exchangedTemp = r1.RT * (c1.thermalConductivity * ((r1.CWS + 1) / c1.boilingTemp) * (r1.CWV/100)); //exchanged temperature between reactor and coolant
             }
 
             r1.CWT = r1.CWT + exchangedTemp; //water temperature
@@ -246,16 +281,86 @@ namespace nuclear_reactor_sim
             exchangedTemp = 0;
             if (!(r1.TO <= 0 && r1.CWT <= 0))
             {
-                exchangedTemp = r1.CWT * (0.9 * ((r1.CWS + 1) / 1914)); //exchanged temperature again between coolant and output
+                exchangedTemp = r1.CWT * (c1.thermalConductivity * ((r1.CWS + 1) / c1.boilingTemp) * (r1.CWV / 100)); //exchanged temperature again between coolant and output
             }
 
             r1.TO = r1.TO + exchangedTemp; //output temperature
 
-            r1.CWT = r1.CWT - exchangedTemp; //water temperature after exchange
+            r1.CWT = r1.CWT - exchangedTemp; //water temperature again after exchange
 
-            if (r1.TO > 100)
+            exchangedTemp = 0;
+            if (!(r1.TO <= 0 && r1.CWT <= 0))
             {
-                r1.TO = r1.TO - (r1.TO - 100);
+                exchangedTemp = r1.TO * (c1.thermalConductivity * ((r1.CWS + 1) / c1.boilingTemp) * (r1.CWV / 100)); //exchanged temperature again between output and the unending void itself which feeds into the neverending mouth of Nyarlathotep the Fallen Prince of the Crawling Chaos itself
+            }
+
+            double powerOutput = (exchangedTemp * c1.thermalConductivity) - ((Math.Abs(r1.PO - r1.PL)/1000)); //power output based on power load, exchanged temperature and thermal conductivity
+            r1.PO = powerOutput * 10; //power output display
+            if (r1.TO > 100) //output temperature(water) to steam
+            {
+                double unendingVoid = Convert.ToDouble(label57.Text);
+                unendingVoid = unendingVoid + (exchangedTemp / 3.2); //temperature of the unending void which is somehow measurable and not incomprehensible to the infinitude of the human mind
+                label57.Text = Convert.ToString(Math.Round(unendingVoid, 0));
+
+                r1.TO = r1.TO - powerOutput; //output temperature again after exchange
+            }
+            else
+            {
+                r1.PO = 0; //power output display
+            }
+
+            if (checkBox1.Checked) //auto power load regulator
+            {
+                if (r1.PO > Convert.ToDouble(numericUpDown3.Value))
+                {
+                    numericUpDown3.Value += 1;
+                }
+                else if (r1.PO < Convert.ToDouble(numericUpDown3.Value))
+                {
+                    if (!(numericUpDown3.Value == 0))
+                    {
+                        numericUpDown3.Value -= 1;
+                    }
+                }
+            }
+            r1.PL = Convert.ToDouble(numericUpDown3.Value);
+
+            if (r1.CWT > c1.boilingTemp) //safeguards in case coolant is boiling away
+            {
+                r1.CWV = r1.CWV - r1.CWV * c1.volumeDecrease;
+                label65.Visible = true;
+            }
+            else //if not
+            {
+                if (r1.CWV < 100)
+                {
+                    r1.CWV = r1.CWV + r1.CWV * c1.volumeDecrease / 2;
+                }
+                else if (r1.CWV > 100)
+                {
+                    r1.CWV = 100;
+                }
+                label65.Visible = false;
+            }
+
+            //natural cooling of everything
+            if (r1.RT > 0)
+            {
+                r1.RT -= 0.1;
+            }
+            if (r1.CWT > 0)
+            {
+                r1.CWT -= 0.1;
+            }
+            if (r1.TO > 0)
+            {
+                r1.TO -= 0.1;
+            }
+
+            //other things (do not remove)
+            if (r1.CWT < 0)
+            {
+                r1.CWT = 0;
             }
 
             return r1;
@@ -266,11 +371,6 @@ namespace nuclear_reactor_sim
             bool gameover = false;
             //fuel rod depletion
             if (r1.FRD >= 100)
-            {
-                gameover = true;
-            }
-            //max FPS reached
-            if (r1.FPS == f1.maxFPS)
             {
                 gameover = true;
             }
@@ -318,12 +418,16 @@ namespace nuclear_reactor_sim
             if (radioButton4.Checked)
             {
                 label1.Text = "Set starting parameters";
+
+                label61.Text = "Type of fuel";
+                radioButton3.Text = "RBMK";
+                radioButton6.Text = "QUADRISO";
+
                 label24.Text = "Type of coolant";
 
                 radioButton1.Text = "Heavy water";
-                radioButton2.Text = "TRIGA (low temp)";
-                radioButton3.Text = "QUADRISO (unsafe at high depl)";
-
+                radioButton2.Text = "Liquid sodium";
+                
                 label53.Text = "Show timer";
                 label25.Text = "Automatic power load";
                 label26.Text = "regulation";
@@ -349,7 +453,9 @@ namespace nuclear_reactor_sim
                 label7.Text = "Cooling system";
 
                 label8.Text = "Circulating coolants' temperature";
+                label65.Text = "Boiling!";
                 label6.Text = "Circulating coolant' speed";
+                label64.Text = "Circulating coolant' volume";
                 label21.Text = "Change circulating coolants' speed";
                 label20.Text = "Desired value:";
 
@@ -365,11 +471,15 @@ namespace nuclear_reactor_sim
             else
             {
                 label1.Text = "Kezdő beállítások";
-                label24.Text = "Hűtővíz típusa";
 
-                radioButton1.Text = "RBMK (unsafe at low temp)";
-                radioButton2.Text = "TRIGA (low temp)";
-                radioButton3.Text = "QUADRISO (unsafe at high depl)";
+                label61.Text = "Fűtőrudak";
+                radioButton3.Text = "RBMK";
+                radioButton6.Text = "QUADRISO";
+
+                label24.Text = "Hűtőfolyadék";
+
+                radioButton1.Text = "Nehézví";
+                radioButton2.Text = "Folyékony nátrium";
 
                 label53.Text = "Eltelt idő mutatása";
                 label25.Text = "Automatikus áram-";
@@ -396,7 +506,9 @@ namespace nuclear_reactor_sim
                 label7.Text = "Hűtőrendszer";
 
                 label8.Text = "Keringetett hűtővíz hőmérséklete";
+                label65.Text = "Forr!";
                 label6.Text = "Keringetett hűtővíz sebessége";
+                label64.Text = "Keringetett hűtővíz mennyisége";
                 label21.Text = "Keringetett hűtővíz sebességének változtatása";
                 label20.Text = "Kért érték:";
 

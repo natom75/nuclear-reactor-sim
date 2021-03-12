@@ -126,6 +126,11 @@
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.progressBar12 = new System.Windows.Forms.ProgressBar();
+            this.label65 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -294,7 +299,7 @@
             // progressBar4
             // 
             this.progressBar4.Location = new System.Drawing.Point(932, 218);
-            this.progressBar4.Maximum = 1000;
+            this.progressBar4.Maximum = 500;
             this.progressBar4.Name = "progressBar4";
             this.progressBar4.Size = new System.Drawing.Size(600, 32);
             this.progressBar4.TabIndex = 20;
@@ -329,6 +334,7 @@
             // progressBar6
             // 
             this.progressBar6.Location = new System.Drawing.Point(1548, 218);
+            this.progressBar6.Maximum = 1000;
             this.progressBar6.Name = "progressBar6";
             this.progressBar6.Size = new System.Drawing.Size(600, 32);
             this.progressBar6.TabIndex = 27;
@@ -336,6 +342,7 @@
             // progressBar7
             // 
             this.progressBar7.Location = new System.Drawing.Point(1548, 103);
+            this.progressBar7.Maximum = 200;
             this.progressBar7.Name = "progressBar7";
             this.progressBar7.Size = new System.Drawing.Size(600, 32);
             this.progressBar7.TabIndex = 26;
@@ -403,6 +410,7 @@
             // progressBar8
             // 
             this.progressBar8.Location = new System.Drawing.Point(1552, 341);
+            this.progressBar8.Maximum = 1000;
             this.progressBar8.Name = "progressBar8";
             this.progressBar8.Size = new System.Drawing.Size(600, 32);
             this.progressBar8.TabIndex = 36;
@@ -418,7 +426,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label18.Location = new System.Drawing.Point(408, 450);
+            this.label18.Location = new System.Drawing.Point(326, 450);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(412, 24);
             this.label18.TabIndex = 38;
@@ -451,7 +459,7 @@
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(1097, 551);
             this.numericUpDown2.Maximum = new decimal(new int[] {
-            1000,
+            500,
             0,
             0,
             0});
@@ -473,7 +481,7 @@
             // progressBar10
             // 
             this.progressBar10.Location = new System.Drawing.Point(932, 587);
-            this.progressBar10.Maximum = 1000;
+            this.progressBar10.Maximum = 500;
             this.progressBar10.Name = "progressBar10";
             this.progressBar10.Size = new System.Drawing.Size(600, 32);
             this.progressBar10.TabIndex = 43;
@@ -482,7 +490,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label21.Location = new System.Drawing.Point(1030, 450);
+            this.label21.Location = new System.Drawing.Point(938, 450);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(387, 24);
             this.label21.TabIndex = 42;
@@ -514,7 +522,7 @@
             // progressBar11
             // 
             this.progressBar11.Location = new System.Drawing.Point(1549, 587);
-            this.progressBar11.Maximum = 10000;
+            this.progressBar11.Maximum = 1000;
             this.progressBar11.Name = "progressBar11";
             this.progressBar11.Size = new System.Drawing.Size(600, 32);
             this.progressBar11.TabIndex = 47;
@@ -523,7 +531,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label23.Location = new System.Drawing.Point(1750, 450);
+            this.label23.Location = new System.Drawing.Point(1557, 450);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(215, 24);
             this.label23.TabIndex = 46;
@@ -557,10 +565,10 @@
             this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(3, 3);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(198, 24);
+            this.radioButton1.Size = new System.Drawing.Size(121, 24);
             this.radioButton1.TabIndex = 53;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Heavy water (standard)";
+            this.radioButton1.Text = "Heavy water";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // radioButton2
@@ -568,9 +576,9 @@
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(3, 32);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(215, 24);
+            this.radioButton2.Size = new System.Drawing.Size(131, 24);
             this.radioButton2.TabIndex = 54;
-            this.radioButton2.Text = "Liquid sodium (high temp)";
+            this.radioButton2.Text = "Liquid sodium";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton3
@@ -579,10 +587,10 @@
             this.radioButton3.Checked = true;
             this.radioButton3.Location = new System.Drawing.Point(3, 3);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(157, 24);
+            this.radioButton3.Size = new System.Drawing.Size(80, 24);
             this.radioButton3.TabIndex = 55;
             this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "RBMK (standard)";
+            this.radioButton3.Text = "RBMK";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // checkBox1
@@ -839,7 +847,7 @@
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label49.ForeColor = System.Drawing.Color.Green;
-            this.label49.Location = new System.Drawing.Point(1627, 490);
+            this.label49.Location = new System.Drawing.Point(1558, 490);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(450, 24);
             this.label49.TabIndex = 82;
@@ -943,7 +951,7 @@
             this.label57.AutoSize = true;
             this.label57.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label57.ForeColor = System.Drawing.Color.Blue;
-            this.label57.Location = new System.Drawing.Point(228, 501);
+            this.label57.Location = new System.Drawing.Point(190, 502);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(22, 24);
             this.label57.TabIndex = 92;
@@ -964,7 +972,7 @@
             this.label59.AutoSize = true;
             this.label59.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label59.ForeColor = System.Drawing.Color.Blue;
-            this.label59.Location = new System.Drawing.Point(250, 501);
+            this.label59.Location = new System.Drawing.Point(244, 538);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(58, 24);
             this.label59.TabIndex = 94;
@@ -1070,9 +1078,9 @@
             this.radioButton6.AutoSize = true;
             this.radioButton6.Location = new System.Drawing.Point(3, 32);
             this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(270, 24);
+            this.radioButton6.Size = new System.Drawing.Size(121, 24);
             this.radioButton6.TabIndex = 56;
-            this.radioButton6.Text = "QUADRISO (unsafe at high depl)";
+            this.radioButton6.Text = "QUADRISO";
             this.radioButton6.UseVisualStyleBackColor = true;
             // 
             // panel1
@@ -1093,11 +1101,65 @@
             this.panel3.Size = new System.Drawing.Size(292, 59);
             this.panel3.TabIndex = 106;
             // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label62.Location = new System.Drawing.Point(1339, 304);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(46, 24);
+            this.label62.TabIndex = 110;
+            this.label62.Text = "100";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label63.Location = new System.Drawing.Point(1469, 304);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(22, 24);
+            this.label63.TabIndex = 109;
+            this.label63.Text = "%";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label64.Location = new System.Drawing.Point(933, 304);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(287, 24);
+            this.label64.TabIndex = 108;
+            this.label64.Text = "Circulating coolants\' volume";
+            // 
+            // progressBar12
+            // 
+            this.progressBar12.Location = new System.Drawing.Point(933, 341);
+            this.progressBar12.Name = "progressBar12";
+            this.progressBar12.Size = new System.Drawing.Size(600, 32);
+            this.progressBar12.TabIndex = 107;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label65.ForeColor = System.Drawing.Color.Red;
+            this.label65.Location = new System.Drawing.Point(1453, 138);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(80, 24);
+            this.label65.TabIndex = 111;
+            this.label65.Text = "Boiling!";
+            this.label65.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2166, 641);
+            this.Controls.Add(this.label65);
+            this.Controls.Add(this.label62);
+            this.Controls.Add(this.label63);
+            this.Controls.Add(this.label64);
+            this.Controls.Add(this.progressBar12);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label61);
@@ -1310,6 +1372,11 @@
         private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.ProgressBar progressBar12;
+        private System.Windows.Forms.Label label65;
     }
 }
 
