@@ -106,14 +106,41 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label51 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label61 = new System.Windows.Forms.Label();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(318, 103);
+            this.progressBar1.Maximum = 10000;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(600, 32);
             this.progressBar1.TabIndex = 0;
@@ -123,13 +150,13 @@
             this.line1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.line1.Location = new System.Drawing.Point(310, 9);
             this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(2, 575);
+            this.line1.Size = new System.Drawing.Size(2, 625);
             this.line1.TabIndex = 1;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(10, 523);
+            this.button1.Location = new System.Drawing.Point(10, 585);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(292, 44);
             this.button1.TabIndex = 4;
@@ -176,6 +203,7 @@
             // progressBar2
             // 
             this.progressBar2.Location = new System.Drawing.Point(318, 218);
+            this.progressBar2.Maximum = 211;
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(600, 32);
             this.progressBar2.TabIndex = 11;
@@ -196,9 +224,9 @@
             this.label4.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.Location = new System.Drawing.Point(318, 181);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(313, 24);
+            this.label4.Size = new System.Drawing.Size(298, 24);
             this.label4.TabIndex = 13;
-            this.label4.Text = "Control rods\' insertion percent";
+            this.label4.Text = "Control rods\' insertion status";
             // 
             // label5
             // 
@@ -240,7 +268,7 @@
             this.line4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.line4.Location = new System.Drawing.Point(924, 9);
             this.line4.Name = "line4";
-            this.line4.Size = new System.Drawing.Size(2, 575);
+            this.line4.Size = new System.Drawing.Size(2, 625);
             this.line4.TabIndex = 18;
             // 
             // label6
@@ -249,9 +277,9 @@
             this.label6.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.Location = new System.Drawing.Point(932, 181);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(259, 24);
+            this.label6.Size = new System.Drawing.Size(276, 24);
             this.label6.TabIndex = 22;
-            this.label6.Text = "Circulating waters\' speed";
+            this.label6.Text = "Circulating coolants\' speed";
             // 
             // label8
             // 
@@ -259,13 +287,14 @@
             this.label8.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label8.Location = new System.Drawing.Point(932, 65);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(321, 24);
+            this.label8.Size = new System.Drawing.Size(338, 24);
             this.label8.TabIndex = 21;
-            this.label8.Text = "Circulating waters\' temperature";
+            this.label8.Text = "Circulating coolants\' temperature";
             // 
             // progressBar4
             // 
             this.progressBar4.Location = new System.Drawing.Point(932, 218);
+            this.progressBar4.Maximum = 1000;
             this.progressBar4.Name = "progressBar4";
             this.progressBar4.Size = new System.Drawing.Size(600, 32);
             this.progressBar4.TabIndex = 20;
@@ -316,7 +345,7 @@
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label11.Location = new System.Drawing.Point(1540, 9);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(2, 575);
+            this.label11.Size = new System.Drawing.Size(2, 625);
             this.label11.TabIndex = 25;
             // 
             // label12
@@ -340,7 +369,7 @@
             // label14
             // 
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label14.Location = new System.Drawing.Point(318, 387);
+            this.label14.Location = new System.Drawing.Point(318, 424);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(600, 2);
             this.label14.TabIndex = 30;
@@ -348,7 +377,7 @@
             // label15
             // 
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label15.Location = new System.Drawing.Point(933, 387);
+            this.label15.Location = new System.Drawing.Point(933, 424);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(600, 2);
             this.label15.TabIndex = 31;
@@ -356,7 +385,7 @@
             // label16
             // 
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label16.Location = new System.Drawing.Point(1552, 387);
+            this.label16.Location = new System.Drawing.Point(1552, 424);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(600, 2);
             this.label16.TabIndex = 32;
@@ -380,7 +409,7 @@
             // 
             // progressBar9
             // 
-            this.progressBar9.Location = new System.Drawing.Point(318, 531);
+            this.progressBar9.Location = new System.Drawing.Point(318, 587);
             this.progressBar9.Name = "progressBar9";
             this.progressBar9.Size = new System.Drawing.Size(600, 32);
             this.progressBar9.TabIndex = 39;
@@ -389,17 +418,17 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label18.Location = new System.Drawing.Point(318, 407);
+            this.label18.Location = new System.Drawing.Point(408, 450);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(428, 24);
+            this.label18.Size = new System.Drawing.Size(412, 24);
             this.label18.TabIndex = 38;
-            this.label18.Text = "Change control rods\' insertion percent";
+            this.label18.Text = "Change control rods\' insertion status";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label19.Location = new System.Drawing.Point(318, 493);
+            this.label19.Location = new System.Drawing.Point(318, 549);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(149, 24);
             this.label19.TabIndex = 40;
@@ -407,7 +436,12 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(483, 495);
+            this.numericUpDown1.Location = new System.Drawing.Point(483, 551);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            211,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 26);
             this.numericUpDown1.TabIndex = 41;
@@ -415,9 +449,9 @@
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(1097, 495);
+            this.numericUpDown2.Location = new System.Drawing.Point(1097, 551);
             this.numericUpDown2.Maximum = new decimal(new int[] {
-            100000,
+            1000,
             0,
             0,
             0});
@@ -430,7 +464,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label20.Location = new System.Drawing.Point(932, 493);
+            this.label20.Location = new System.Drawing.Point(932, 549);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(149, 24);
             this.label20.TabIndex = 44;
@@ -438,7 +472,8 @@
             // 
             // progressBar10
             // 
-            this.progressBar10.Location = new System.Drawing.Point(932, 531);
+            this.progressBar10.Location = new System.Drawing.Point(932, 587);
+            this.progressBar10.Maximum = 1000;
             this.progressBar10.Name = "progressBar10";
             this.progressBar10.Size = new System.Drawing.Size(600, 32);
             this.progressBar10.TabIndex = 43;
@@ -447,15 +482,15 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label21.Location = new System.Drawing.Point(932, 407);
+            this.label21.Location = new System.Drawing.Point(1030, 450);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(368, 24);
+            this.label21.Size = new System.Drawing.Size(387, 24);
             this.label21.TabIndex = 42;
-            this.label21.Text = "Change circulating waters\' speed";
+            this.label21.Text = "Change circulating coolants\' speed";
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(1714, 495);
+            this.numericUpDown3.Location = new System.Drawing.Point(1714, 551);
             this.numericUpDown3.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -470,7 +505,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label22.Location = new System.Drawing.Point(1549, 493);
+            this.label22.Location = new System.Drawing.Point(1549, 549);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(149, 24);
             this.label22.TabIndex = 48;
@@ -478,7 +513,8 @@
             // 
             // progressBar11
             // 
-            this.progressBar11.Location = new System.Drawing.Point(1549, 531);
+            this.progressBar11.Location = new System.Drawing.Point(1549, 587);
+            this.progressBar11.Maximum = 10000;
             this.progressBar11.Name = "progressBar11";
             this.progressBar11.Size = new System.Drawing.Size(600, 32);
             this.progressBar11.TabIndex = 47;
@@ -487,7 +523,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label23.Location = new System.Drawing.Point(1549, 407);
+            this.label23.Location = new System.Drawing.Point(1750, 450);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(215, 24);
             this.label23.TabIndex = 46;
@@ -497,7 +533,7 @@
             // 
             this.button2.Font = new System.Drawing.Font("MS PGothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button2.ForeColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(609, 495);
+            this.button2.Location = new System.Drawing.Point(609, 548);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 32);
             this.button2.TabIndex = 50;
@@ -509,48 +545,50 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label24.Location = new System.Drawing.Point(12, 65);
+            this.label24.Location = new System.Drawing.Point(9, 154);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(167, 24);
+            this.label24.Size = new System.Drawing.Size(164, 24);
             this.label24.TabIndex = 51;
-            this.label24.Text = "Type of fuel rod";
+            this.label24.Text = "Type of coolant";
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(16, 103);
+            this.radioButton1.Location = new System.Drawing.Point(3, 3);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(228, 24);
+            this.radioButton1.Size = new System.Drawing.Size(198, 24);
             this.radioButton1.TabIndex = 53;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "RBMK (unsafe at low temp)";
+            this.radioButton1.Text = "Heavy water (standard)";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(16, 133);
+            this.radioButton2.Location = new System.Drawing.Point(3, 32);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(161, 24);
+            this.radioButton2.Size = new System.Drawing.Size(215, 24);
             this.radioButton2.TabIndex = 54;
-            this.radioButton2.Text = "TRIGA (low temp)";
+            this.radioButton2.Text = "Liquid sodium (high temp)";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(16, 163);
+            this.radioButton3.Checked = true;
+            this.radioButton3.Location = new System.Drawing.Point(3, 3);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(270, 24);
+            this.radioButton3.Size = new System.Drawing.Size(157, 24);
             this.radioButton3.TabIndex = 55;
-            this.radioButton3.Text = "QUADRISO (unsafe at high depl)";
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "RBMK (standard)";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(280, 285);
+            this.checkBox1.Location = new System.Drawing.Point(277, 291);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(22, 21);
             this.checkBox1.TabIndex = 57;
@@ -560,7 +598,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label25.Location = new System.Drawing.Point(12, 261);
+            this.label25.Location = new System.Drawing.Point(9, 285);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(225, 24);
             this.label25.TabIndex = 58;
@@ -570,7 +608,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label26.Location = new System.Drawing.Point(12, 288);
+            this.label26.Location = new System.Drawing.Point(9, 312);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(106, 24);
             this.label26.TabIndex = 59;
@@ -640,11 +678,11 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label33.Location = new System.Drawing.Point(868, 181);
+            this.label33.Location = new System.Drawing.Point(783, 181);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(22, 24);
+            this.label33.Size = new System.Drawing.Size(77, 24);
             this.label33.TabIndex = 66;
-            this.label33.Text = "%";
+            this.label33.Text = "rods in";
             // 
             // label34
             // 
@@ -660,17 +698,17 @@
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label35.Location = new System.Drawing.Point(868, 493);
+            this.label35.Location = new System.Drawing.Point(783, 552);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(22, 24);
+            this.label35.Size = new System.Drawing.Size(77, 24);
             this.label35.TabIndex = 68;
-            this.label35.Text = "%";
+            this.label35.Text = "rods in";
             // 
             // label36
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label36.Location = new System.Drawing.Point(1468, 492);
+            this.label36.Location = new System.Drawing.Point(1468, 548);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(64, 24);
             this.label36.TabIndex = 69;
@@ -680,7 +718,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label37.Location = new System.Drawing.Point(2089, 493);
+            this.label37.Location = new System.Drawing.Point(2089, 549);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(46, 24);
             this.label37.TabIndex = 70;
@@ -690,7 +728,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label38.Location = new System.Drawing.Point(775, 65);
+            this.label38.Location = new System.Drawing.Point(761, 65);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(22, 24);
             this.label38.TabIndex = 71;
@@ -700,17 +738,17 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label39.Location = new System.Drawing.Point(751, 181);
+            this.label39.Location = new System.Drawing.Point(737, 181);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(46, 24);
             this.label39.TabIndex = 72;
-            this.label39.Text = "100";
+            this.label39.Text = "211";
             // 
             // label40
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label40.Location = new System.Drawing.Point(775, 303);
+            this.label40.Location = new System.Drawing.Point(761, 303);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(22, 24);
             this.label40.TabIndex = 73;
@@ -720,7 +758,7 @@
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label41.Location = new System.Drawing.Point(1351, 65);
+            this.label41.Location = new System.Drawing.Point(1338, 65);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(22, 24);
             this.label41.TabIndex = 74;
@@ -730,7 +768,7 @@
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label42.Location = new System.Drawing.Point(1351, 181);
+            this.label42.Location = new System.Drawing.Point(1338, 181);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(22, 24);
             this.label42.TabIndex = 75;
@@ -740,7 +778,7 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label43.Location = new System.Drawing.Point(1918, 65);
+            this.label43.Location = new System.Drawing.Point(1906, 65);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(22, 24);
             this.label43.TabIndex = 76;
@@ -750,7 +788,7 @@
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label44.Location = new System.Drawing.Point(1918, 181);
+            this.label44.Location = new System.Drawing.Point(1906, 181);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(22, 24);
             this.label44.TabIndex = 77;
@@ -760,7 +798,7 @@
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label45.Location = new System.Drawing.Point(1918, 303);
+            this.label45.Location = new System.Drawing.Point(1906, 303);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(22, 24);
             this.label45.TabIndex = 78;
@@ -770,17 +808,17 @@
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label46.Location = new System.Drawing.Point(751, 493);
+            this.label46.Location = new System.Drawing.Point(737, 552);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(46, 24);
             this.label46.TabIndex = 79;
-            this.label46.Text = "100";
+            this.label46.Text = "211";
             // 
             // label47
             // 
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label47.Location = new System.Drawing.Point(1351, 493);
+            this.label47.Location = new System.Drawing.Point(1338, 549);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(22, 24);
             this.label47.TabIndex = 80;
@@ -790,7 +828,7 @@
             // 
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label48.Location = new System.Drawing.Point(1918, 492);
+            this.label48.Location = new System.Drawing.Point(1906, 548);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(22, 24);
             this.label48.TabIndex = 81;
@@ -801,7 +839,7 @@
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label49.ForeColor = System.Drawing.Color.Green;
-            this.label49.Location = new System.Drawing.Point(1550, 447);
+            this.label49.Location = new System.Drawing.Point(1627, 490);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(450, 24);
             this.label49.TabIndex = 82;
@@ -811,7 +849,7 @@
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label50.Location = new System.Drawing.Point(12, 368);
+            this.label50.Location = new System.Drawing.Point(9, 355);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(262, 24);
             this.label50.TabIndex = 83;
@@ -820,7 +858,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(280, 379);
+            this.checkBox2.Location = new System.Drawing.Point(277, 358);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(22, 21);
             this.checkBox2.TabIndex = 84;
@@ -831,7 +869,7 @@
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label51.ForeColor = System.Drawing.Color.Blue;
-            this.label51.Location = new System.Drawing.Point(12, 413);
+            this.label51.Location = new System.Drawing.Point(8, 433);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(212, 24);
             this.label51.TabIndex = 85;
@@ -842,17 +880,241 @@
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label52.ForeColor = System.Drawing.Color.Blue;
-            this.label52.Location = new System.Drawing.Point(276, 415);
+            this.label52.Location = new System.Drawing.Point(228, 435);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(22, 24);
             this.label52.TabIndex = 86;
             this.label52.Text = "0";
             // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label53.Location = new System.Drawing.Point(9, 243);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(122, 24);
+            this.label53.TabIndex = 87;
+            this.label53.Text = "Show timer";
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(277, 246);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(22, 21);
+            this.checkBox3.TabIndex = 88;
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label54.ForeColor = System.Drawing.Color.Blue;
+            this.label54.Location = new System.Drawing.Point(8, 467);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(72, 24);
+            this.label54.TabIndex = 89;
+            this.label54.Text = "Timer:";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label55.ForeColor = System.Drawing.Color.Blue;
+            this.label55.Location = new System.Drawing.Point(228, 468);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(22, 24);
+            this.label55.TabIndex = 90;
+            this.label55.Text = "0";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label56.ForeColor = System.Drawing.Color.Blue;
+            this.label56.Location = new System.Drawing.Point(8, 501);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(183, 24);
+            this.label56.TabIndex = 91;
+            this.label56.Text = "Power generated:";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label57.ForeColor = System.Drawing.Color.Blue;
+            this.label57.Location = new System.Drawing.Point(228, 501);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(22, 24);
+            this.label57.TabIndex = 92;
+            this.label57.Text = "0";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label58.Location = new System.Drawing.Point(9, 398);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(236, 24);
+            this.label58.TabIndex = 93;
+            this.label58.Text = "Show power generated";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label59.ForeColor = System.Drawing.Color.Blue;
+            this.label59.Location = new System.Drawing.Point(250, 501);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(58, 24);
+            this.label59.TabIndex = 94;
+            this.label59.Text = "MWh";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label60.ForeColor = System.Drawing.Color.Blue;
+            this.label60.Location = new System.Drawing.Point(282, 468);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(21, 24);
+            this.label60.TabIndex = 95;
+            this.label60.Text = "s";
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(277, 401);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(22, 21);
+            this.checkBox4.TabIndex = 96;
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Checked = true;
+            this.radioButton4.Location = new System.Drawing.Point(6, 12);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(69, 24);
+            this.radioButton4.TabIndex = 97;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "ENG";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(81, 12);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(69, 24);
+            this.radioButton5.TabIndex = 98;
+            this.radioButton5.Text = "HUN";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::nuclear_reactor_sim.Properties.Resources.lightning_charge;
+            this.pictureBox3.InitialImage = global::nuclear_reactor_sim.Properties.Resources._123794_200;
+            this.pictureBox3.Location = new System.Drawing.Point(2001, 5);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(48, 45);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 102;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::nuclear_reactor_sim.Properties.Resources.thermometer_half;
+            this.pictureBox2.InitialImage = global::nuclear_reactor_sim.Properties.Resources._123794_200;
+            this.pictureBox2.Location = new System.Drawing.Point(765, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 45);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 101;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::nuclear_reactor_sim.Properties.Resources._123794_200;
+            this.pictureBox1.InitialImage = global::nuclear_reactor_sim.Properties.Resources._123794_200;
+            this.pictureBox1.Location = new System.Drawing.Point(1395, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 45);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 100;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.radioButton4);
+            this.panel2.Controls.Add(this.radioButton5);
+            this.panel2.Location = new System.Drawing.Point(10, 534);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(154, 48);
+            this.panel2.TabIndex = 103;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label61.Location = new System.Drawing.Point(9, 65);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(128, 24);
+            this.label61.TabIndex = 104;
+            this.label61.Text = "Type of fuel";
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(3, 32);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(270, 24);
+            this.radioButton6.TabIndex = 56;
+            this.radioButton6.Text = "QUADRISO (unsafe at high depl)";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Location = new System.Drawing.Point(10, 181);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(292, 59);
+            this.panel1.TabIndex = 105;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.radioButton3);
+            this.panel3.Controls.Add(this.radioButton6);
+            this.panel3.Location = new System.Drawing.Point(10, 92);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(292, 59);
+            this.panel3.TabIndex = 106;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2166, 593);
+            this.ClientSize = new System.Drawing.Size(2166, 641);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label61);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.checkBox4);
+            this.Controls.Add(this.label60);
+            this.Controls.Add(this.label59);
+            this.Controls.Add(this.label58);
+            this.Controls.Add(this.label57);
+            this.Controls.Add(this.label56);
+            this.Controls.Add(this.label55);
+            this.Controls.Add(this.label54);
+            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.label53);
             this.Controls.Add(this.label52);
             this.Controls.Add(this.label51);
             this.Controls.Add(this.checkBox2);
@@ -883,9 +1145,6 @@
             this.Controls.Add(this.label26);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.numericUpDown3);
@@ -937,6 +1196,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1022,6 +1290,26 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 
