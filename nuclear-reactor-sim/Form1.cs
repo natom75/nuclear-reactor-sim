@@ -478,7 +478,7 @@ namespace nuclear_reactor_sim
 
                 label24.Text = "Hűtőfolyadék";
 
-                radioButton1.Text = "Nehézví";
+                radioButton1.Text = "Nehézvíz";
                 radioButton2.Text = "Folyékony nátrium";
 
                 label53.Text = "Eltelt idő mutatása";
