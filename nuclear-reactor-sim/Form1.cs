@@ -20,7 +20,7 @@ namespace nuclear_reactor_sim
             public double FPS = 0; //fissions per second
             public double FRD = 0; //fuel rods' depletion
             public double RT = 0;  //reactor temperature
-            public double CWT = 0; //circulating waters' temperature
+            public double CWT = 0; //circulating coolants' temperature
             public double TO = 0;  //temperature output
             public double PO = 0;  //power output
             public double CWV = 0;  //coolant volume
@@ -30,6 +30,8 @@ namespace nuclear_reactor_sim
             public double FPSincrease = 0;  //the FPS increase per 1 CRS decrease
             public double meltdownTemp = 0; //the temperature meltdown value (after this the fuel rods melt, hence the reactor stops)
             public double depletion = 0;    //depletion factor
+
+            
         }
         class coolant
         {
@@ -115,15 +117,15 @@ namespace nuclear_reactor_sim
             fuel f1 = new fuel();
             if (radioButton3.Checked)
             {
-                f1.FPSincrease = 1.5;
+                f1.FPSincrease = 1.2;
                 f1.meltdownTemp = 2178;
-                f1.depletion = 2;
+                f1.depletion = 1.23;
             } //rbmk
             else if (radioButton6.Checked)
             {
-                f1.FPSincrease = 2.1;
+                f1.FPSincrease = 2.5;
                 f1.meltdownTemp = 4133;
-                f1.depletion = 3;
+                f1.depletion = 1.66;
             } //quadriso
 
             //coolant
@@ -212,11 +214,11 @@ namespace nuclear_reactor_sim
                     label41.ForeColor = System.Drawing.Color.Black;
                 }
 
-                if (r1.CWV > (2570 / 10) * 9) //water volume
+                if (r1.CWV > 90) //water volume
                 {
                     label62.ForeColor = System.Drawing.Color.Green;
                 }
-                else if (r1.CWV > (2570 / 10))
+                else if (r1.CWV < 10)
                 {
                     label62.ForeColor = System.Drawing.Color.Red;
                 }
@@ -225,24 +227,38 @@ namespace nuclear_reactor_sim
                     label62.ForeColor = System.Drawing.Color.Black;
                 }
 
-                if (r1.TO > 374)
+                if (r1.TO > 374) //temp output
                 {
                     label43.ForeColor = System.Drawing.Color.Red;
+                    label66.Visible = false;
+                    label68.Visible = true;
                 }
                 else if (r1.TO > 100)
                 {
                     label43.ForeColor = System.Drawing.Color.Green;
+                    label66.Visible = false;
+                    label68.Visible = false;
                 }
                 else if (r1.TO > 80)
                 {
                     label43.ForeColor = System.Drawing.Color.Black;
+                    label66.Visible = false;
+                    label68.Visible = false;
                 }
                 else
                 {
                     label43.ForeColor = System.Drawing.Color.Red;
+                    label66.Visible = true;
+                    label68.Visible = false;
                 }
 
-                if (r1.CWS > 0)
+                if (r1.FRD > 90) //fuel rod depletion
+                {
+                    label67.Visible = true;
+                    label40.ForeColor = System.Drawing.Color.Red;
+                }
+
+                if (r1.CWS > 0) //gif
                 {
                     Image img = pictureBox1.Image;
                     img.RotateFlip(RotateFlipType.Rotate90FlipNone);
@@ -264,7 +280,7 @@ namespace nuclear_reactor_sim
 
             r1.FPS = ((211-r1.CRS)*4*f1.FPSincrease)/((r1.FRD + 0.1)/10); //fission per sec
             
-            r1.RT = r1.RT + (r1.FPS / 3.2); //reator temp increase by fuel
+            r1.RT = r1.RT + (r1.FPS / 3.2); //reactor temp
 
             r1.FRD = r1.FRD + (r1.FPS / f1.depletion)/1000; //fuel depletion
 
@@ -279,7 +295,7 @@ namespace nuclear_reactor_sim
             r1.RT = r1.RT - exchangedTemp; //reactor temperature again after exchange
 
             exchangedTemp = 0;
-            if (!(r1.TO <= 0 && r1.CWT <= 0))
+            if (!(r1.CWT <= 0))
             {
                 exchangedTemp = r1.CWT * (c1.thermalConductivity * ((r1.CWS + 1) / c1.boilingTemp) * (r1.CWV / 100)); //exchanged temperature again between coolant and output
             }
@@ -307,6 +323,11 @@ namespace nuclear_reactor_sim
             else
             {
                 r1.PO = 0; //power output display
+            }
+
+            if (r1.TO > 374) //superheated steams' thermal conductivity is decreasing as it gets hotter
+            {
+                r1.TO = r1.TO - (r1.TO - 374);
             }
 
             if (checkBox1.Checked) //auto power load regulator
@@ -358,9 +379,17 @@ namespace nuclear_reactor_sim
             }
 
             //other things (do not remove)
+            if (r1.RT < 0)
+            {
+                r1.RT = 0;
+            }
             if (r1.CWT < 0)
             {
                 r1.CWT = 0;
+            }
+            if (r1.TO < 0)
+            {
+                r1.TO = 0;
             }
 
             return r1;
@@ -446,6 +475,7 @@ namespace nuclear_reactor_sim
                 label4.Text = "Control rods' insertion status";
                 label33.Text = "rods in";
                 label5.Text = "Fuel rods' depletion percent";
+                label67.Text = "Almost depleted!";
                 label18.Text = "Change control rods' insertion status";
                 label19.Text = "Desired value:";
                 label35.Text = "rods in";
@@ -462,6 +492,8 @@ namespace nuclear_reactor_sim
                 label13.Text = "Output";
 
                 label10.Text = "Temperature output";
+                label66.Text = "Too cold!";
+                label68.Text = "Too hot!";
                 label9.Text = "Power output";
                 label17.Text = "Power load";
                 label23.Text = "Change power load";
@@ -499,6 +531,7 @@ namespace nuclear_reactor_sim
                 label4.Text = "Szabályzórudak helyzete";
                 label33.Text = "rúd van bent";
                 label5.Text = "Fűtőrudak elhasználtsága";
+                label67.Text = "Mindjárt elfogy!";
                 label18.Text = "Szabályzórudak helyzetének változtatása";
                 label19.Text = "Kért érték:";
                 label35.Text = "rúd van bent";
@@ -515,6 +548,8 @@ namespace nuclear_reactor_sim
                 label13.Text = "Kimenet";
 
                 label10.Text = "Hőkimenet";
+                label66.Text = "Túl hideg!";
+                label68.Text = "Túl forró!";
                 label9.Text = "Áramkimenet";
                 label17.Text = "Áramterhelés";
                 label23.Text = "Áramterhelés változtatása";

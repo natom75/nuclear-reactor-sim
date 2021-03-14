@@ -131,6 +131,9 @@
             this.label64 = new System.Windows.Forms.Label();
             this.progressBar12 = new System.Windows.Forms.ProgressBar();
             this.label65 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -342,7 +345,7 @@
             // progressBar7
             // 
             this.progressBar7.Location = new System.Drawing.Point(1548, 103);
-            this.progressBar7.Maximum = 200;
+            this.progressBar7.Maximum = 374;
             this.progressBar7.Name = "progressBar7";
             this.progressBar7.Size = new System.Drawing.Size(600, 32);
             this.progressBar7.TabIndex = 26;
@@ -1150,11 +1153,50 @@
             this.label65.Text = "Boiling!";
             this.label65.Visible = false;
             // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label66.ForeColor = System.Drawing.Color.Red;
+            this.label66.Location = new System.Drawing.Point(2047, 138);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(101, 24);
+            this.label66.TabIndex = 112;
+            this.label66.Text = "Too cold!";
+            this.label66.Visible = false;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label67.ForeColor = System.Drawing.Color.Red;
+            this.label67.Location = new System.Drawing.Point(742, 376);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(176, 24);
+            this.label67.TabIndex = 113;
+            this.label67.Text = "Almost depleted!";
+            this.label67.Visible = false;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label68.ForeColor = System.Drawing.Color.Red;
+            this.label68.Location = new System.Drawing.Point(2056, 138);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(92, 24);
+            this.label68.TabIndex = 114;
+            this.label68.Text = "Too hot!";
+            this.label68.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2166, 641);
+            this.Controls.Add(this.label68);
+            this.Controls.Add(this.label67);
+            this.Controls.Add(this.label66);
             this.Controls.Add(this.label65);
             this.Controls.Add(this.label62);
             this.Controls.Add(this.label63);
@@ -1377,6 +1419,9 @@
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.ProgressBar progressBar12;
         private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label68;
     }
 }
 
